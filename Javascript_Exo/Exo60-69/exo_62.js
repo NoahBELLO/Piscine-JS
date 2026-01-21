@@ -12,3 +12,11 @@ concatStrings("Hello", "World") // "Hello World"
 concatStrings("Bonjour", "JS")   // "Bonjour JS"
 concatStrings("", "Test")        // " Test"
 */
+
+function concatStrings(str1, str2) {
+    return `${str1} ${str2}`;
+}
+
+console.log(concatStrings("Hello", "World"));
+console.log(concatStrings("Bonjour", "JS"));
+console.log(concatStrings("", "Test"));

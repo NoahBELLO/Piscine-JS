@@ -22,3 +22,17 @@ async function afficherMessage() {
     console.log("✅ Terminé !");
 }
 */
+
+function attendreDelai(ms) {
+    return new Promise((resolve) => {
+        setTimeout(resolve, ms);
+    });
+}
+
+async function afficherMessage() {
+    console.log("⏳ Attente...");
+    await attendreDelai(2000);
+    console.log("✅ Terminé !");
+}  
+
+afficherMessage();
