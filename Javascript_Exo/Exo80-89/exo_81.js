@@ -86,10 +86,10 @@ console.log(supprimerDoublons([1, 2, 2, 3, 3, 3, 4, 5, 5]));
 const manager = new GestionnaireUtilisateurs();
 manager.connexion("alice");
 manager.connexion("bob");
-console.log(manager.estEnLigne("alice")); // true
-console.log(manager.obtenirTous()); // ["alice", "bob"]
+console.log(manager.estEnLigne("alice")); 
+console.log(manager.obtenirTous());
 const setA = new Set([1, 2, 3, 4]);
 const setB = new Set([3, 4, 5, 6]);
-console.log(union(setA, setB)); // Set {1, 2, 3, 4, 5, 6}
-console.log(intersection(setA, setB)); // Set {3, 4}
-console.log(difference(setA, setB)); // Set {1, 2}
+console.log(union(setA, setB)); 
+console.log(intersection(setA, setB)); 
+console.log(difference(setA, setB)); 

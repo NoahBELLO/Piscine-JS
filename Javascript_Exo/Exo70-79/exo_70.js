@@ -23,25 +23,34 @@ async function recuperer() {
     }
 }
 */
-async function fetchData(url) {
-    try {
-        const response = await fetch(url);
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
 
-        const data = await response.json();
-        return data;
-    } catch (erreur) {
-        console.error('Erreur:', erreur);
+async function postData(url, payload) {
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
+    const data = await response.json();
+    return data;
+  } catch (erreur) {
+    console.error("Erreur:", erreur);
+  }
 }
 
-const apiUrl = 'https://jsonplaceholder.typicode.com/posts/1';
-
-fetchData(apiUrl).then(data => {
-    if (data) {
-        console.log('Données récupérées:', data);
-    }
+const postUrl = "https://jsonplaceholder.typicode.com/posts";
+const newPost = {
+  title: "foo",
+  body: "bar",
+  userId: 1,
+};
+postData(postUrl, newPost).then((data) => {
+  if (data) {
+    console.log("Données postées:", data);
+  }
 });

@@ -39,9 +39,9 @@ function memoize(fn, options = {}) {
         if (cache.has(key)) {
             const { value, timestamp } = cache.get(key);
             if (ttl === 0 || (now - timestamp) < ttl) {
-                return value; // Return cached value
+                return value; 
             } else {
-                cache.delete(key); // Expired
+                cache.delete(key); 
             }
         }
 

@@ -207,9 +207,3 @@ console.log(systeme.rechercherParTags(['javascript', 'css'], 'OR'));
 console.log(systeme.rechercherParTags(['javascript', 'web'], 'AND'));  
 
 console.log(systeme.obtenirStatsTags());
-// [
-//   { tag: 'javascript', count: 2 },
-//   { tag: 'web', count: 2 },
-//   { tag: 'programmation', count: 1 },
-//   ...
-// ]

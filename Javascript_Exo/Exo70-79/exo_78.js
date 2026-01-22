@@ -24,13 +24,10 @@ const module = (function() {
 })();
 */
 
-// IIFE classique
 (function() {
-    // Code isolé
     const prive = "secret";
 })();
 
-// IIFE avec return
 const module = (function() {
     const prive = "secret";
 
@@ -40,4 +37,4 @@ const module = (function() {
 })();
 
 console.log(module.public);
-// console.log(module.prive); 
+console.log(module.prive); 

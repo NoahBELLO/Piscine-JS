@@ -27,10 +27,8 @@ function creerBanque(proprietaire, solde = 0) {
 */
 
 function creerBanque(proprietaire, solde = 0) {
-    // Variables privées
     let _solde = solde;
 
-    // Méthodes publiques
     return {
         deposer(montant) {
             if (montant > 0) {

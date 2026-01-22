@@ -9,15 +9,12 @@ mergeIntervals({start: 10, end: 15}, {start: 5, end: 12}) // { start: 5, end: 15
 mergeIntervals({start: 0, end: 3}, {start: 7, end: 10}) // { start: 0, end: 10 }
 */
 
-function splitInterval(interval, n) {
-    const points = [];
-    const step = (interval.end - interval.start) / n;
-    for (let i = 0; i <= n; i++) {
-        points.push(interval.start + i * step);
-    }
-    return points;
+function mergeIntervals(interval1, interval2) { 
+    const start = Math.min(interval1.start, interval2.start);
+    const end = Math.max(interval1.end, interval2.end);
+    return { start, end };
 }
 
-console.log(splitInterval({start: 0, end: 10}, 5));  
-console.log(splitInterval({start: 0, end: 1}, 4)); 
-console.log(splitInterval({start: 10, end: 20}, 2)); 
+console.log(mergeIntervals({start: 1, end: 5}, {start: 3, end: 8})); 
+console.log(mergeIntervals({start: 10, end: 15}, {start: 5, end: 12}));
+console.log(mergeIntervals({start: 0, end: 3}, {start: 7, end: 10}));
